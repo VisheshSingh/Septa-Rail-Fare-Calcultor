@@ -88,11 +88,11 @@ var result = (json) => {
         console.log(total);
     }
     document.getElementById("amount").innerHTML = total;
-
+    // SHOW OFFER ON 10-TRIP PASS
     if(rides >= 8){
         document.getElementById("deal").innerHTML = "Get 10-trip pass for only $ " + deal; 
     }
-
+    //SHOW DETAILS ABOUT THE TIME
     var timeInfo = json.info[time];
     document.getElementById("timeInfo").innerHTML = timeInfo; 
 }
