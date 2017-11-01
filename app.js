@@ -68,6 +68,7 @@ var result = (json) => {
     var rides = userChoice["rides"];
     
     var total; // STORES TOTAL
+    var deal;  // STORES 10-TRIP DISCOUNT
     
     // OUTER LOOP ITERATES OVER 'zones' ARRAY OBJECT TO GET THE RESPECTIVE ZONE VALUE
     for (var i = 0; i < json.zones.length; i++) {
@@ -76,6 +77,7 @@ var result = (json) => {
             for (var j = 0; j < json.zones[i].fares.length; j++) {
                 if(json.zones[i].fares[j].type == time && json.zones[i].fares[j].purchase == place){
                     total = json.zones[i].fares[j].price;
+                    deal = json.zones[i].fares[4].price;
                 }
             }
         }
@@ -86,5 +88,12 @@ var result = (json) => {
         console.log(total);
     }
     document.getElementById("amount").innerHTML = total;
+
+    if(rides >= 8){
+        document.getElementById("deal").innerHTML = "Get 10-trip pass for only $ " + deal; 
+    }
+
+    var timeInfo = json.info[time];
+    document.getElementById("timeInfo").innerHTML = timeInfo; 
 }
 window.onload = fetchJson();
