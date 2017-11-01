@@ -50,6 +50,12 @@ var userSelect  = () => {
     var placeElement = document.querySelector('input[name="place"]:checked').value;
     var rideElement = document.querySelector('input[name ="rides"]').value; 
     
+    if(timeElement === "anytime"){
+        document.querySelector("#station").checked = 'true';
+        document.querySelector("#noOfRides").innerHTML = 10;
+        document.querySelector("#noOfRides").value = 10;
+    }
+
     var userChoice  = {
         "zone" : zoneElement,
         "time" : timeElement,
