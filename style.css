@@ -103,6 +103,11 @@ form div{
     padding-left:10px;
 }
 
+#deal {
+    margin-top:20px;
+    font-size: 1.2rem;
+}
+
 /* TOTAL FARE */
 #totalfare {
     margin-top:30px;
